@@ -1,4 +1,3 @@
-
 import express from "express";
 import * as blogController from "./blog.controller";
 import { authenticate } from "../../middlewares/auth.middleware";
