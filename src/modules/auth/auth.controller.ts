@@ -3,10 +3,6 @@ import { Request, Response } from "express";
 import * as authService from "./auth.service";
 import { RegisterDto, LoginDto } from "./auth.types";
 
-/**
- * Note: In production you may want to disable open registration.
- * For the portfolio seed an OWNER with seed.ts (see seed folder).
- */
 
 export const register = async (req: Request, res: Response) => {
   const body = req.body as RegisterDto;
