@@ -1,0 +1,68 @@
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL") // e.g. postgres://USER:PASSWORD@HOST:PORT/DATABASE
+}
+
+// --------------------
+// User Table
+// --------------------
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      Role     @default(USER)
+  blogs     Blog[]
+  projects  Project[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// User roles
+enum Role {
+  ADMIN
+  USER
+}
+
+// --------------------
+// Blog Table
+// --------------------
+model Blog {
+  id        String   @id @default(cuid())
+  title     String
+  content   String
+  excerpt   String?
+  slug      String   @unique
+  thumbnail String?   // ✅ new field
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  String
+  published Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+
+// --------------------
+// Project Table
+// --------------------
+model Project {
+  id         String   @id @default(cuid())
+  title      String
+  description String
+  thumbnail  String?
+  liveUrl    String?
+  repoUrl    String?
+  features   String[] @default([])
+  techStack  String[] @default([]) // New
+  owner      User     @relation(fields: [ownerId], references: [id])
+  ownerId    String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
