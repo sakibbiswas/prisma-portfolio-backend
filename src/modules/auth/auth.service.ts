@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 import jwt, { SignOptions } from "jsonwebtoken";
 import { env } from "../../config/env";
 import { RegisterDto, LoginDto, TokenPayload } from "./auth.types";
-import { Role } from "@prisma/client"; // ✅ Import Prisma Role enum
+import { Role } from "@prisma/client"; //Import Prisma Role enum
 
 const SALT_ROUNDS = 10;
 
