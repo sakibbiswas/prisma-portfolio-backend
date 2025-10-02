@@ -1,4 +1,3 @@
-// src/modules/user/user.service.ts
 import { prisma } from "../../config/db";
 
 export const findUserById = async (id: string) => {
