@@ -24,6 +24,7 @@ const createUpload = (folder: "projects" | "blogs") => {
   return multer({ storage });
 };
 
+
 // Export specific middlewares
 export const uploadProjectThumbnail = createUpload("projects");
 export const uploadBlogThumbnail = createUpload("blogs");
