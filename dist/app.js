@@ -20,7 +20,10 @@ app.use((0, helmet_1.default)({
 }));
 // Global CORS for API
 app.use((0, cors_1.default)({
-    origin: "http://localhost:3000", // frontend URL
+    origin: [
+        "http://localhost:3000", // Local development
+        "https://next-portfolio-frontend-gold.vercel.app", // Deployed frontend
+    ],
     credentials: true,
 }));
 // Other middlewares

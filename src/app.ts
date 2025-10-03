@@ -22,10 +22,14 @@ app.use(
 // Global CORS for API
 app.use(
   cors({
-    origin: "http://localhost:3000", // frontend URL
+    origin: [
+      "http://localhost:3000", // Local development
+      "https://next-portfolio-frontend-gold.vercel.app", // Deployed frontend
+    ],
     credentials: true,
   })
 );
+
 
 // Other middlewares
 app.use(express.json());
