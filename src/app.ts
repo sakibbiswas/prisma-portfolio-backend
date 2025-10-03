@@ -49,7 +49,7 @@ app.use("/uploads", (req, res, next) => {
 app.use("/uploads", express.static(uploadsPath, { dotfiles: "allow" }));
 
 // Health check
-app.get("/api/health", (_req: Request, res: Response) => {
+app.get("/", (_req: Request, res: Response) => {
   res.status(200).json({ status: "ok", message: "Server is running 🚀" });
 });
 
@@ -57,3 +57,12 @@ app.get("/api/health", (_req: Request, res: Response) => {
 app.use(errorHandler);
 
 export default app;
+
+
+
+
+
+
+
+
+
