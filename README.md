@@ -77,6 +77,6 @@
 #### 🧩 Author
 
 ##### Sazzadur Rahman Sakib
-Fullsatack Developer
+###### Fullsatack Developer
 📧 [sakibsakib99880@gmail.com]
 🌐 [https://prisma-backend-portfolio.vercel.app]
