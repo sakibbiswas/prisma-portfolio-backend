@@ -67,7 +67,7 @@
 ### ⚡ Installation & Setup
 
 #### 1️⃣ Clone the Repository
-`git clone https://github.com/sakibbiswas/prisma-portfolio-backend`
+`git clone` [https://github.com/sakibbiswas/prisma-portfolio-backend]
 `cd portfolio-backend`
 
 `2️⃣ Install Dependencies`
