@@ -42,7 +42,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/blogs", blogRoutes);
 app.use("/api/projects", projectRoutes);
 
-// ✅ Serve static uploads with proper CORS headers
+//  Serve static uploads with proper CORS headers
 const uploadsPath = path.resolve(__dirname, "..", "uploads");
 app.use("/uploads", (req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
